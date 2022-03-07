@@ -1,0 +1,44 @@
+{% load crispy_forms_tags %}
+<style>
+	input[type=text],
+	textarea,
+	select {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+
+	label span {
+		color: red;
+	}
+</style>
+<form method="post" data-url="{% url 'detail' task.id %}" class="detail-form">
+	<div class="modal-header">
+		<h3 class="modal-title">View Task</h3>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<div class="">
+			<p style="color:red;"> Title: </p>
+			<p>{{ task.title }}</p>
+		</div>
+		<div class="">
+			<p style="color:red;">Description: </p>
+			<p>{{ task.description }}</p>
+		</div>
+		<div class="">
+			<p style="color:red;">Completed: </p>
+			<p>{% if task.completed %} Yes {% else %} No {% endif %}</p>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+		</div>
+</form>

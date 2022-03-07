@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="page-header">To Do</h1>
+
+<table class="table" id="task-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% include "tasklist.html" %}
+  </tbody>
+</table>
+<button class="btn btn-primary show-form" data-url="{% url 'create' %}">
+  <span class="glyphicon glyphicon-plus"></span>
+  New Task
+</button>
+
+
+<div class="modal fade" id="modal-task">
+  <div class="modal-dialog">
+    <div class="modal-content"></div>
+  </div>
+</div>
+{% endblock %}
