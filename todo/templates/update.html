@@ -30,10 +30,8 @@
 
     <label for="description">Description</label>
     {{ form.description }}
-
-
     <label for="completed">Completed:</label>
-    {% if form.completed %}
+    {% if form.instance.completed %}
     <td>Yes</td>
     {% else %}
     <td>No</td>
